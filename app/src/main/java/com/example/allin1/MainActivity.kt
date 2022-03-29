@@ -4,16 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val viewPager = findViewById<ViewPager>(R.id.main_viewpager)
-        viewPager.adapter = ViewPagerAdapter(supportFragmentManager)
+        main_viewpager.adapter = ViewPagerAdapter(supportFragmentManager)
 
-        val tabLayout = findViewById<TabLayout>(R.id.main_tab_layout)
-        tabLayout.setupWithViewPager(viewPager)
+        main_tab_layout.setupWithViewPager(main_viewpager)
     }
 }

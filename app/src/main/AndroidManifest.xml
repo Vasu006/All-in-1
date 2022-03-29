@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AllIn1">
         <activity
+            android:name=".SecondActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomePageActivity"
             android:exported="false" />
         <activity

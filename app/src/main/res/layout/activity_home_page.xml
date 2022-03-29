@@ -7,16 +7,59 @@
     tools:context=".HomePageActivity">
 
     <TextView
-        android:id="@+id/home_text"
+        android:id="@+id/home_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#84a160"
+        android:drawableStart="@drawable/ic_profile_icon"
+        android:drawablePadding="10sp"
+        android:paddingHorizontal="15sp"
+        android:paddingVertical="8sp"
         android:text="Welcome to All in 1 "
-        android:textSize="40sp"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/home_page_card"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_margin="15sp"
+        app:cardBackgroundColor="#84a160"
+        app:cardCornerRadius="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_profile" />
+
+    <ImageButton
+        android:id="@+id/img_fruit"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginVertical="25sp"
+        android:background="@drawable/login_button_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_page_card"
+        app:layout_constraintWidth_percent="0.45" />
+
+    <ImageButton
+        android:id="@+id/img_vegetables"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginVertical="25sp"
+        android:background="@drawable/login_button_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintStart_toEndOf="@id/img_fruit"
+        app:layout_constraintTop_toBottomOf="@+id/home_page_card"
+        app:layout_constraintWidth_percent="0.45" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
