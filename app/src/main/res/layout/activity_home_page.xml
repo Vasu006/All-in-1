@@ -33,7 +33,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.27"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/home_profile" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/sale_icon"
+            />
+
+    </androidx.cardview.widget.CardView>
 
     <ImageButton
         android:id="@+id/img_fruit"
@@ -41,13 +49,33 @@
         android:layout_height="0sp"
         android:layout_marginHorizontal="15sp"
         android:layout_marginVertical="25sp"
-        android:background="@drawable/login_button_main"
+        android:background="@drawable/rv_border"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintHeight_percent="0.22"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_page_card"
         app:layout_constraintWidth_percent="0.45" />
+
+    <TextView
+        android:id="@+id/text_fruitbtn"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.45"
+        android:background="@drawable/rv_border"
+        android:layout_marginLeft="15sp"
+        android:text="Fruit"
+        android:textColor="@color/white"
+        android:backgroundTint="#84a160"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingVertical="3sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_fruit"
+        />
 
     <ImageButton
         android:id="@+id/img_vegetables"
@@ -55,11 +83,31 @@
         android:layout_height="0sp"
         android:layout_marginHorizontal="15sp"
         android:layout_marginVertical="25sp"
-        android:background="@drawable/login_button_main"
+        android:background="@drawable/rv_border"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintHeight_percent="0.22"
         app:layout_constraintStart_toEndOf="@id/img_fruit"
         app:layout_constraintTop_toBottomOf="@+id/home_page_card"
         app:layout_constraintWidth_percent="0.45" />
+
+    <TextView
+        android:id="@+id/text_vegetablebtn"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.45"
+        android:background="@drawable/rv_border"
+        android:layout_marginRight="13sp"
+        android:text="Vegetables"
+        android:textColor="@color/white"
+        android:backgroundTint="#84a160"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingVertical="3sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+
+        app:layout_constraintTop_toBottomOf="@+id/img_vegetables"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
