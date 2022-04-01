@@ -13,6 +13,14 @@ class HomePageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
+        mainviewmodel.clear_Cart()
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val curr_email = intent.getStringExtra("Curr_Cust_email")
+        val current_customer: Customers? = curr_email?.let { mainviewmodel.Login_Customer(it)[0] }
 
         Glide.with(MainApplication_Java.getContext())
             .load("https://s3.envato.com/files/306843079/2971_17.jpg")
@@ -22,11 +30,9 @@ class HomePageActivity : AppCompatActivity() {
             .load("https://static.vecteezy.com/system/resources/previews/004/288/604/large_2x/vegetables-and-fruits-on-white-background-photo.jpg")
             .into(img_vegetables)
 
-
-        val curr_email = intent.getStringExtra("Curr_Cust_email")
-        val current_customer: Customers? = curr_email?.let { mainviewmodel.Login_Customer(it)[0] }
-
         home_profile.setText("${current_customer?.customer_name}")
+
+
 
         img_fruit.setOnClickListener {
             Intent(MainApplication_Java.getContext(), SecondActivity::class.java).also {
@@ -34,8 +40,6 @@ class HomePageActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
-
-//        https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX2257086.jpg
 
         img_vegetables.setOnClickListener {
             Intent(MainApplication_Java.getContext(), SecondActivity::class.java).also {

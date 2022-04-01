@@ -55,5 +55,4 @@
         android:backgroundTint="#84a160"
         app:layout_constraintTop_toBottomOf="@id/login_password" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,34 +1,61 @@
 package com.example.allin1
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.items_recyclerview.view.*
 
 class Item_RV_Adapter(
-    var gloceries_item : List<Gloceries_data >
+    var groceries_item: List<Cart_items>
 ) : RecyclerView.Adapter<Item_RV_Adapter.Item_RV_ViewHolder>() {
 
-    inner class Item_RV_ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView)
+    val mainviewmodel: MainViewModel = MainViewModel()
+
+    inner class Item_RV_ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Item_RV_ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.items_recyclerview, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.items_recyclerview, parent, false)
         return Item_RV_ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: Item_RV_ViewHolder, position: Int) {
         holder.itemView.apply {
-            rv_item_name.text = gloceries_item[position].Name
-            rv_item_price.text = "${gloceries_item[position].Price} Rs / ${gloceries_item[position].Weight}"
+            rv_item_name.text = groceries_item[position].Name
+            rv_item_price.text =
+                "${groceries_item[position].Price} Rs / ${groceries_item[position].Weight}"
+
+            if (mainviewmodel.cart_ItemExist(groceries_item[position].Name))
+                btn_addToCart.setText("Remove Item")
+            else
+
+                btn_addToCart.setText("Add to cart")
+
+            btn_addToCart.setOnClickListener {
+
+                Log.d("ItemExist", "${mainviewmodel.cart_ItemExist(groceries_item[position].Name)}")
+
+                if (mainviewmodel.cart_ItemExist(groceries_item[position].Name)) {
+                    btn_addToCart.setText("Add to cart")
+                    mainviewmodel.remove_CartItem(groceries_item[position])
+                } else {
+                    btn_addToCart.setText("Remove Item")
+                    mainviewmodel.insert_CartItem(groceries_item[position])
+                }
+
+            }
             Glide.with(context)
-                .load(gloceries_item[position].Img_url)
+                .load(groceries_item[position].Img_url)
                 .into(rv_item_image)
         }
     }
 
     override fun getItemCount(): Int {
-        return gloceries_item.size
+        return groceries_item.size
     }
+
 }

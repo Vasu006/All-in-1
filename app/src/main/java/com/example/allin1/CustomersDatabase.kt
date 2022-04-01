@@ -5,9 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database (entities = [Customers::class], version = 1)
+@Database (entities = [Customers::class, Cart_items::class], version = 1)
 abstract class CustomersDatabase : RoomDatabase() {
     abstract fun CustomersDao() : CustomersDao
+    abstract fun Cart_itemsDao() : Cart_itemsDao
 
     companion object {
         @Volatile
@@ -19,7 +20,7 @@ abstract class CustomersDatabase : RoomDatabase() {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         CustomersDatabase::class.java,
-                        "CustomersDB"
+                        "GloceriesDB"
                     ).allowMainThreadQueries().build()
                 }
             }

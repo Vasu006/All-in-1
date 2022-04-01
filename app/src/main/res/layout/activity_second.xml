@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
 
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/second_fragment_RV"
         android:layout_width="match_parent"
@@ -14,5 +16,58 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cartValue_box"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
+        android:layout_margin="2sp"
+        android:visibility="visible"
+        android:background="@drawable/cart_background_shape"
+        app:cardCornerRadius="10sp"
+        android:backgroundTint="@color/light_green">
+
+        <TextView
+            android:id="@+id/cart_quantity"
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintWidth_percent="0.5"
+            android:text="1 Items"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingVertical="3sp"
+            android:textSize="18sp"
+            android:paddingStart="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/cart_totalValue"
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintWidth_percent="0.5"
+            android:text="Rs 200"
+            android:paddingVertical="1sp"
+            android:textSize="19sp"
+            android:paddingStart="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cart_quantity"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

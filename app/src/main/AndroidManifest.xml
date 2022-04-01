@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AllIn1">
         <activity
+            android:name=".Checkout_CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlaceOrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".SecondActivity"
             android:exported="false" />
         <activity
