@@ -7,8 +7,6 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_home_page.*
 import kotlinx.android.synthetic.main.items_recyclerview.view.*
 
-val mainviewmodel = MainViewModel()
-
 class HomePageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

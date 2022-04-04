@@ -11,8 +11,6 @@ import kotlinx.android.synthetic.main.fragment_cart__item.*
 
 class Cart_ItemFragment : Fragment() {
 
-    val mainviewmodel = MainViewModel()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,11 +21,20 @@ class Cart_ItemFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        var cartItems = mainviewmodel.get_FinalCart()
 
+        text_Cart_TotalPrice.setText("Rs ${mainviewmodel.get_CartValue()}")
+
+        var cartItems = mainviewmodel.get_FinalCart()
         val rv_adapter = Checkout_Item_RV_Adapter(cartItems)
         RV_Groceries_cart.adapter = rv_adapter
         RV_Groceries_cart.layoutManager = LinearLayoutManager(MainApplication_Java.getContext())
+
+        constraint_place_order.setOnClickListener {
+            val orderPlacefragment = OrderPlacedFragment()
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.fragment_cart,orderPlacefragment)?.commit()
+        }
+
 
     }
 }

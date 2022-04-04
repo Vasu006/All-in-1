@@ -10,8 +10,6 @@ import kotlinx.android.synthetic.main.fragment_signup_page.*
 
 class SignupPageFragment : Fragment() {
 
-    val mainviewmodel = MainViewModel()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

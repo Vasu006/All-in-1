@@ -13,8 +13,6 @@ class Item_RV_Adapter(
     var groceries_item: List<Cart_items>
 ) : RecyclerView.Adapter<Item_RV_Adapter.Item_RV_ViewHolder>() {
 
-    val mainviewmodel: MainViewModel = MainViewModel()
-
     inner class Item_RV_ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Item_RV_ViewHolder {

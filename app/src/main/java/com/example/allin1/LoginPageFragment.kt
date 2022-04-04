@@ -12,8 +12,6 @@ import java.security.AccessController.getContext
 
 class LoginPageFragment : Fragment() {
 
-    val mainviewmodel = MainViewModel()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

@@ -7,64 +7,61 @@
     tools:context=".SecondActivity">
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/second_fragment_RV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cartValue_box"
         android:layout_width="match_parent"
         android:layout_height="0sp"
+        android:layout_margin="2sp"
+        android:background="@drawable/cart_background_shape"
+        android:backgroundTint="@color/light_green"
+        android:visibility="visible"
+        app:cardCornerRadius="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.08"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1"
-        android:layout_margin="2sp"
-        android:visibility="visible"
-        android:background="@drawable/cart_background_shape"
-        app:cardCornerRadius="10sp"
-        android:backgroundTint="@color/light_green">
+        app:layout_constraintVertical_bias="1">
 
         <TextView
             android:id="@+id/cart_quantity"
             android:layout_width="0sp"
             android:layout_height="0sp"
-            app:layout_constraintHeight_percent="0.5"
-            app:layout_constraintWidth_percent="0.5"
+            android:paddingVertical="3sp"
+            android:paddingStart="15sp"
             android:text="1 Items"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintHeight_percent="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:paddingVertical="3sp"
-            android:textSize="18sp"
-            android:paddingStart="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            />
+            app:layout_constraintWidth_percent="0.5" />
 
         <TextView
             android:id="@+id/cart_totalValue"
             android:layout_width="0sp"
             android:layout_height="0sp"
-            app:layout_constraintHeight_percent="0.5"
-            app:layout_constraintWidth_percent="0.5"
-            android:text="Rs 200"
             android:paddingVertical="1sp"
-            android:textSize="19sp"
             android:paddingStart="15sp"
-            android:textStyle="bold"
+            android:text="Rs 200"
             android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="19sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cart_quantity"/>
-
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cart_quantity"
+            app:layout_constraintWidth_percent="0.5" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
