@@ -1,11 +1,13 @@
 package com.example.allin1
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import kotlinx.android.synthetic.main.fragment_login_page.*
 import kotlinx.android.synthetic.main.fragment_signup_page.*
 
 class SignupPageFragment : Fragment() {
@@ -61,6 +63,15 @@ class SignupPageFragment : Fragment() {
             Toast.makeText(MainApplication_Java.getContext(),"Check Password",Toast.LENGTH_SHORT).show()
             return false
         }
+        val passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{4,}$"
+        val passwordMatcher = Regex(passwordPattern)
+//        Log.d("Password_validate","${passwordMatcher.find(login_password.text.toString())}")
+
+        if (passwordMatcher.find(signup_password.text.toString()) == null){
+            Toast.makeText(MainApplication_Java.getContext(),"Password should be minimum 8 char with number, alphabet and symbols",Toast.LENGTH_SHORT).show()
+            return false
+        }
+
         if (signup_confirmpassword.text.toString().length < 1){
             Toast.makeText(MainApplication_Java.getContext(),"Check Password",Toast.LENGTH_SHORT).show()
             return false

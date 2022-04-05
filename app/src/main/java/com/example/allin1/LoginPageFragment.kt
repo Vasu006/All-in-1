@@ -2,6 +2,7 @@ package com.example.allin1
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,19 +30,19 @@ class LoginPageFragment : Fragment() {
 
                 if (current_customer.customer_password == login_password.text.toString()){
                     Toast.makeText(MainApplication_Java.getContext(), "Welcome, You have loggedin successfully", Toast.LENGTH_SHORT).show()
+                    Intent(MainApplication_Java.getContext(),HomePageActivity::class.java).also{
+                        it.putExtra("Curr_Cust_email", login_emailId.text.toString())
+                        startActivity(it)
+                    }
                 }
-
-                Intent(MainApplication_Java.getContext(),HomePageActivity::class.java).also{
-                    it.putExtra("Curr_Cust_email", login_emailId.text.toString())
-                    startActivity(it)
+                else{
+                    Toast.makeText(MainApplication_Java.getContext(), "Incorrect Password", Toast.LENGTH_SHORT).show()
                 }
-
             }
         }
     }
 
     fun Login_Validation() : Boolean {
-
 
         if (android.util.Patterns.EMAIL_ADDRESS.matcher(login_emailId.text.toString()).matches() == false)
         {
@@ -50,6 +51,7 @@ class LoginPageFragment : Fragment() {
         }
 
         if (mainviewmodel.Customer_Exists(login_emailId.text.toString()) == false){
+
             Toast.makeText(MainApplication_Java.getContext(),"Check Email address",Toast.LENGTH_SHORT).show()
             return false
         }
