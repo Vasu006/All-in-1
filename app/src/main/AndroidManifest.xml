@@ -3,7 +3,7 @@
     package="com.example.allin1">
 
     <application
-        android:name=".MainApplication_Java"
+        android:name=".domain.businessLogic.MainApplication_Java"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,16 +11,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AllIn1">
         <activity
-            android:name=".Checkout_CartActivity"
+            android:name=".UI.activities.Checkout_CartActivity"
             android:exported="false" />
         <activity
             android:name=".PlaceOrderActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".UI.activities.SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".HomePageActivity"
+            android:name=".UI.activities.HomePageActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

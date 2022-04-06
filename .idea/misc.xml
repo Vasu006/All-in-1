@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/layout/activity_second.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/cart_items_recyclerview.xml" value="0.2759259259259259" />
         <entry key="app/src/main/res/layout/checkout_items_recyclerview.xml" value="0.19722222222222222" />
+        <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/fragment_cart__item.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_login_page.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_order_placed.xml" value="0.3098958333333333" />

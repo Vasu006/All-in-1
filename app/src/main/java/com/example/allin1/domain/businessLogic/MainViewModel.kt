@@ -1,7 +1,10 @@
-package com.example.allin1
+package com.example.allin1.domain.businessLogic
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.example.allin1.data.Cart_items
+import com.example.allin1.data.Customers
+import com.example.allin1.data.CustomersDatabase
 
 class MainViewModel : ViewModel() {
     private val database = CustomersDatabase.getDatabase_instance(MainApplication_Java.getContext())

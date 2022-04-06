@@ -1,11 +1,13 @@
-package com.example.allin1
+package com.example.allin1.UI.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
+import com.example.allin1.data.Customers
+import com.example.allin1.domain.businessLogic.MainApplication_Java
+import com.example.allin1.R
 import kotlinx.android.synthetic.main.activity_home_page.*
-import kotlinx.android.synthetic.main.items_recyclerview.view.*
 
 class HomePageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

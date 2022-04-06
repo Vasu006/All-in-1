@@ -1,12 +1,14 @@
-package com.example.allin1
+package com.example.allin1.UI.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.allin1.domain.businessLogic.MainViewModel
+import com.example.allin1.R
 
-val mainViewModel = MainViewModel()
+val mainviewmodel = MainViewModel()
 
 class OrderPlacedFragment : Fragment() {
 

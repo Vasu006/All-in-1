@@ -1,12 +1,14 @@
-package com.example.allin1
+package com.example.allin1.domain.businessLogic
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.allin1.R
+import com.example.allin1.UI.activities.mainviewmodel
+import com.example.allin1.data.Cart_items
 import kotlinx.android.synthetic.main.items_recyclerview.view.*
 
 class Item_RV_Adapter(

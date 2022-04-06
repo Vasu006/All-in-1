@@ -1,9 +1,10 @@
-package com.example.allin1
+package com.example.allin1.UI.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.viewpager.widget.ViewPager
-import com.google.android.material.tabs.TabLayout
+import com.example.allin1.domain.businessLogic.MainViewModel
+import com.example.allin1.R
+import com.example.allin1.domain.businessLogic.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 val mainviewmodel = MainViewModel()

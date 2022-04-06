@@ -1,14 +1,13 @@
-package com.example.allin1
+package com.example.allin1.domain.businessLogic
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.ActionMenuItemView
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.allin1.R
+import com.example.allin1.data.Cart_items
 import kotlinx.android.synthetic.main.checkout_items_recyclerview.view.*
-import kotlinx.android.synthetic.main.items_recyclerview.view.*
 
 class Checkout_Item_RV_Adapter(
     var cart_item :List<Cart_items>

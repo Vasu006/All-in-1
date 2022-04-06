@@ -1,13 +1,14 @@
-package com.example.allin1
+package com.example.allin1.UI.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import kotlinx.android.synthetic.main.fragment_login_page.*
+import com.example.allin1.data.Customers
+import com.example.allin1.domain.businessLogic.MainApplication_Java
+import com.example.allin1.R
 import kotlinx.android.synthetic.main.fragment_signup_page.*
 
 class SignupPageFragment : Fragment() {

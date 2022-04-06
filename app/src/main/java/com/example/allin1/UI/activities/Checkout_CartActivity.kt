@@ -1,7 +1,10 @@
-package com.example.allin1
+package com.example.allin1.UI.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.allin1.R
+import com.example.allin1.UI.fragments.Cart_ItemFragment
+import com.example.allin1.UI.fragments.OrderPlacedFragment
 import kotlinx.android.synthetic.main.fragment_cart__item.*
 
 class Checkout_CartActivity : AppCompatActivity() {

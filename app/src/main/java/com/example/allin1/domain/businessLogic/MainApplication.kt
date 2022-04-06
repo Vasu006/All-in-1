@@ -1,4 +1,4 @@
-package com.example.allin1
+package com.example.allin1.domain.businessLogic
 
 import android.app.Application
 import android.content.Context

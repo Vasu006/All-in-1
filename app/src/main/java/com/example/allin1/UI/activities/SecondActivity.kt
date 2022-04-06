@@ -1,4 +1,4 @@
-package com.example.allin1
+package com.example.allin1.UI.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,10 +7,14 @@ import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.allin1.*
+import com.example.allin1.data.Cart_items
+import com.example.allin1.domain.businessLogic.Item_RV_Adapter
+import com.example.allin1.domain.businessLogic.MainApplication_Java
+import com.example.allin1.domain.businessLogic.MainViewModel
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_second.*
-import kotlinx.android.synthetic.main.fragment_login_page.*
 
 class SecondActivity : AppCompatActivity() {
     val firebase_instance = Firebase.firestore
@@ -29,7 +33,7 @@ class SecondActivity : AppCompatActivity() {
         val selected_categories = intent.getStringExtra("Selected_categories")
 
         cartValue_box.setOnClickListener {
-            Intent(MainApplication_Java.getContext(),Checkout_CartActivity::class.java).also{
+            Intent(MainApplication_Java.getContext(), Checkout_CartActivity::class.java).also{
                 startActivity(it)
             }
         }

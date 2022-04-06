@@ -1,4 +1,4 @@
-package com.example.allin1
+package com.example.allin1.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
