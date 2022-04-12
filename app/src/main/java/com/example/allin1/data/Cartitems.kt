@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "Cart")
-data class Cart_items(
+data class Cartitems(
     val Img_url: String = "",
     @PrimaryKey
     val Name: String = "",

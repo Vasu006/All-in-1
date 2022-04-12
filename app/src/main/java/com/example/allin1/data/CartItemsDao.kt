@@ -7,28 +7,28 @@ import androidx.room.Insert
 import androidx.room.Query
 
 @Dao
-interface Cart_itemsDao {
+interface CartItemsDao {
     @Insert
-    fun add_cartItem(item: Cart_items)
+    fun addCartItem(item: Cartitems)
 
     @Delete
-    fun delete_cartItem(item: Cart_items)
+    fun deleteCartItem(item: Cartitems)
 
     @Query("SELECT * FROM Cart")
-    fun get_CartItem(): LiveData<List<Cart_items>>
+    fun getCartItem(): LiveData<List<Cartitems>>
 
     @Query("SELECT COUNT(Name) FROM Cart")
-    fun get_CartQuantity(): Int
+    fun getCartQuantity(): Int
 
     @Query("SELECT SUM(Price) FROM Cart")
-    fun get_CartValue(): Double
+    fun getCartValue(): Double
 
     @Query("DElETE FROM Cart")
-    fun clear_Cart()
+    fun clearCart()
 
     @Query("SELECT * FROM Cart ORDER BY Type ASC, Name ASC")
-    fun get_finalCart(): List<Cart_items>
+    fun getFinalCart(): List<Cartitems>
 
     @Query("SELECT EXISTS (SELECT * FROM Cart WHERE Name = :Name ) ")
-    fun cart_ItemExist(Name: String): Boolean
+    fun cartItemExist(Name: String): Boolean
 }

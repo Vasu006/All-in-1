@@ -14,8 +14,8 @@ interface CustomersDao {
     fun updateCustomer(customer: Customers)
 
     @Query("SELECT EXISTS (SELECT * FROM Customers_details WHERE customer_email = :cust_email) ")
-    fun CustomerExists(cust_email : String) : Boolean
+    fun customerExists(cust_email : String) : Boolean
 
     @Query("SELECT * FROM Customers_details WHERE customer_email = :cust_email ")
-    fun LoginCustomer(cust_email: String) : List<Customers>
+    fun loginCustomer(cust_email: String) : List<Customers>
 }

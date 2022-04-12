@@ -1,9 +1,9 @@
-package com.example.allin1.domain.businessLogic;
+package com.example.allin1;
 
 import android.app.Application;
 import android.content.Context;
 
-public class MainApplication_Java extends Application {
+public class MainApplicationJava extends Application {
 
     private static Context mContext;
 

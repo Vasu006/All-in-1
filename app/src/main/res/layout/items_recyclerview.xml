@@ -8,35 +8,35 @@
 
     <ImageView
         android:id="@+id/rv_item_image"
-        android:layout_width="0sp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         app:layout_constraintWidth_percent=".42"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="15sp"
+        android:layout_margin="15dp"
         />
 
     <TextView
         android:id="@+id/rv_item_name"
-        android:layout_width="0sp"
-        android:layout_height="50sp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         app:layout_constraintStart_toEndOf="@+id/rv_item_image"
-        android:layout_marginTop="15sp"
-        android:padding="5sp"
+        android:layout_marginTop="15dp"
+        android:padding="5dp"
         android:text="Name"
-        android:textSize="20sp"
+        android:textSize="@dimen/txt_size_20sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/rv_item_price"
-        android:layout_width="0sp"
-        android:layout_height="50sp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         app:layout_constraintStart_toEndOf="@+id/rv_item_image"
-        android:padding="5sp"
+        android:padding="5dp"
         android:text="Name"
-        android:textSize="20sp"
+        android:textSize="@dimen/txt_size_20sp"
         app:layout_constraintTop_toBottomOf="@id/rv_item_name"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -51,7 +51,7 @@
         android:padding="5sp"
         android:layout_marginHorizontal="10sp"
         android:text="Add to cart"
-        android:textSize="13sp"
+        android:textSize="@dimen/txt_size_13sp"
         app:layout_constraintTop_toBottomOf="@id/rv_item_price"
         app:layout_constraintEnd_toEndOf="parent"/>
 

@@ -1,4 +1,4 @@
-package com.example.allin1.domain.businessLogic
+package com.example.allin1.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,17 +6,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.allin1.R
-import com.example.allin1.data.Cart_items
-import kotlinx.android.synthetic.main.checkout_items_recyclerview.view.*
+import com.example.allin1.data.Cartitems
+import kotlinx.android.synthetic.main.checkout_itemsrecyclerview.view.*
 
-class Checkout_Item_RV_Adapter(
-    var cart_item :List<Cart_items>
-) : RecyclerView.Adapter<Checkout_Item_RV_Adapter.Checkout_Item_ViewHolder>(){
+class CheckoutItemRVAdapter(
+    var cart_item :List<Cartitems>
+) : RecyclerView.Adapter<CheckoutItemRVAdapter.Checkout_Item_ViewHolder>(){
+
     inner class Checkout_Item_ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Checkout_Item_ViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.checkout_items_recyclerview, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.checkout_itemsrecyclerview, parent, false)
         return Checkout_Item_ViewHolder(view)
     }
 

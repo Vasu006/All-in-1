@@ -1,19 +1,19 @@
-package com.example.allin1.domain.businessLogic
+package com.example.allin1.presentation.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.allin1.R
-import com.example.allin1.UI.activities.mainviewmodel
-import com.example.allin1.data.Cart_items
+import com.example.allin1.data.Cartitems
 import kotlinx.android.synthetic.main.items_recyclerview.view.*
 
-class Item_RV_Adapter(
-    var groceries_item: List<Cart_items>
-) : RecyclerView.Adapter<Item_RV_Adapter.Item_RV_ViewHolder>() {
+class ItemRVAdapter(
+
+) : RecyclerView.Adapter<ItemRVAdapter.Item_RV_ViewHolder>() {
+    private var setListener: Listener? = null
+    private var groceries_item = emptyList<Cartitems>()
 
     inner class Item_RV_ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
@@ -24,30 +24,21 @@ class Item_RV_Adapter(
     }
 
     override fun onBindViewHolder(holder: Item_RV_ViewHolder, position: Int) {
+
         holder.itemView.apply {
+
             rv_item_name.text = groceries_item[position].Name
             rv_item_price.text =
                 "${groceries_item[position].Price} Rs / ${groceries_item[position].Weight}"
 
-            if (mainviewmodel.cart_ItemExist(groceries_item[position].Name))
-                btn_addToCart.setText("Remove Item")
-            else
-
-                btn_addToCart.setText("Add to cart")
+            setListener?.checkCartItem(groceries_item[position], this)
 
             btn_addToCart.setOnClickListener {
-
-                Log.d("ItemExist", "${mainviewmodel.cart_ItemExist(groceries_item[position].Name)}")
-
-                if (mainviewmodel.cart_ItemExist(groceries_item[position].Name)) {
-                    btn_addToCart.setText("Add to cart")
-                    mainviewmodel.remove_CartItem(groceries_item[position])
-                } else {
-                    btn_addToCart.setText("Remove Item")
-                    mainviewmodel.insert_CartItem(groceries_item[position])
+                if (setListener != null) {
+                    setListener!!.onClickItem(groceries_item[position], this)
                 }
-
             }
+
             Glide.with(context)
                 .load(groceries_item[position].Img_url)
                 .into(rv_item_image)
@@ -58,4 +49,17 @@ class Item_RV_Adapter(
         return groceries_item.size
     }
 
+    interface Listener {
+        fun onClickItem(item: Cartitems, view: View)
+        fun checkCartItem(item: Cartitems, view: View)
+    }
+
+    fun setInterface(setListener: Listener) {
+        this.setListener = setListener
+    }
+
+    fun setItems(list: List<Cartitems>) {
+        this.groceries_item = list
+        notifyDataSetChanged()
+    }
 }

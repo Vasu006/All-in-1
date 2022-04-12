@@ -10,17 +10,24 @@
         <entry key="app/src/main/res/drawable/login_button_main.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rv_border.xml" value="0.178" />
         <entry key="app/src/main/res/layout/activity_checkout_cart.xml" value="0.2759259259259259" />
+        <entry key="app/src/main/res/layout/activity_checkoutcart.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.32904863211641056" />
+        <entry key="app/src/main/res/layout/activity_homepage.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_place_order.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_second.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/cart_items_recyclerview.xml" value="0.2759259259259259" />
         <entry key="app/src/main/res/layout/checkout_items_recyclerview.xml" value="0.19722222222222222" />
+        <entry key="app/src/main/res/layout/checkout_itemsrecyclerview.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.29583333333333334" />
-        <entry key="app/src/main/res/layout/fragment_cart__item.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_cart__item.xml" value="0.2601628621419271" />
+        <entry key="app/src/main/res/layout/fragment_cartitem.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_login_page.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_loginpage.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_order_placed.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_orderplaced.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_signup_page.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_signuppage.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/items_recyclerview.xml" value="0.3098958333333333" />
       </map>
     </option>

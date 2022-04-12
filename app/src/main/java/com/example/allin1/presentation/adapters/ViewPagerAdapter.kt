@@ -1,10 +1,10 @@
-package com.example.allin1.domain.businessLogic
+package com.example.allin1.presentation.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.allin1.UI.fragments.LoginPageFragment
-import com.example.allin1.UI.fragments.SignupPageFragment
+import com.example.allin1.presentation.fragments.LoginPageFragment
+import com.example.allin1.presentation.fragments.SignupPageFragment
 
 class ViewPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
     override fun getCount(): Int {
