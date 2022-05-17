@@ -5,7 +5,9 @@ import android.os.Bundle
 import com.example.allin1.R
 import com.example.allin1.presentation.fragments.CartItemFragment
 import com.example.allin1.presentation.fragments.OrderPlacedFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CheckoutCartActivity : AppCompatActivity(), CartItemFragment.FragmentTransition {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,12 +19,9 @@ class CheckoutCartActivity : AppCompatActivity(), CartItemFragment.FragmentTrans
             replace(R.id.fragment_cart, fragment_cartItem)
                 .commit()
         }
-
-
     }
 
     override fun placeOrder() {
-
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fragment_cart, OrderPlacedFragment())
                 .commit()

@@ -1,15 +1,17 @@
-package com.example.allin1.data
+package com.example.allin1.data.datasource
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.allin1.domain.businessLogic.model.Cartitems
+import com.example.allin1.domain.businessLogic.model.Customers
 import com.example.allin1.utils.Constants
 
 @Database(entities = [Customers::class, Cartitems::class], version = 1)
 abstract class CustomersDatabase : RoomDatabase() {
-    abstract fun CustomersDao(): CustomersDao
-    abstract fun CartitemsDao(): CartItemsDao
+    abstract val CustomersDao: CustomersDao
+    abstract val CartitemsDao: CartItemsDao
 
     companion object {
         @Volatile

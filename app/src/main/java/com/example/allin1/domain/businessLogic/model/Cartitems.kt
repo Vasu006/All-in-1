@@ -1,4 +1,4 @@
-package com.example.allin1.data
+package com.example.allin1.domain.businessLogic.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

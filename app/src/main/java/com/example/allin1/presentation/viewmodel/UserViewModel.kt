@@ -1,11 +1,13 @@
 package com.example.allin1.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.example.allin1.data.Customers
+import com.example.allin1.domain.businessLogic.model.Customers
 import com.example.allin1.domain.businessLogic.repository.UserRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class UserViewModel : ViewModel() {
-    private val userRepository = UserRepository()
+@HiltViewModel
+class UserViewModel @Inject constructor(private val userRepository: UserRepository) : ViewModel() {
 
     fun insertCustomer(customer: Customers) {
         userRepository.insertCustomer(customer)

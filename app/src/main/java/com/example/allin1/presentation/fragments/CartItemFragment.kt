@@ -11,9 +11,10 @@ import com.example.allin1.presentation.adapters.CheckoutItemRVAdapter
 import com.example.allin1.MainApplicationJava
 import com.example.allin1.R
 import com.example.allin1.presentation.viewmodel.CartViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_cartitem.*
 
-
+@AndroidEntryPoint
 class CartItemFragment : Fragment() {
 
     private lateinit var cartViewModel: CartViewModel
@@ -45,7 +46,7 @@ class CartItemFragment : Fragment() {
         }
     }
 
-    interface FragmentTransition{
+    interface FragmentTransition {
         fun placeOrder()
     }
 }

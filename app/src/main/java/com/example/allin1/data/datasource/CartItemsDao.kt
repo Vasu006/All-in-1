@@ -1,10 +1,11 @@
-package com.example.allin1.data
+package com.example.allin1.data.datasource
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import com.example.allin1.domain.businessLogic.model.Cartitems
 
 @Dao
 interface CartItemsDao {

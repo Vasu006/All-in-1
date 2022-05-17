@@ -6,12 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.allin1.data.Customers
+import androidx.lifecycle.ViewModelProvider
+import com.example.allin1.domain.businessLogic.model.Customers
 import com.example.allin1.MainApplicationJava
 import com.example.allin1.R
+import com.example.allin1.presentation.viewmodel.CartViewModel
 import com.example.allin1.presentation.viewmodel.UserViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_signuppage.*
 
+@AndroidEntryPoint
 class SignupPageFragment : Fragment() {
 
     private lateinit var userViewModel: UserViewModel
@@ -29,7 +33,7 @@ class SignupPageFragment : Fragment() {
 
         btn_signup.setOnClickListener {
             if (signupValidation()) {
-
+                userViewModel = ViewModelProvider(this)[UserViewModel::class.java]
                 userViewModel.insertCustomer(
                     Customers(
                         signup_name.text.toString(),

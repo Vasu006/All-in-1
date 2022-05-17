@@ -5,14 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.example.allin1.data.Customers
+import com.example.allin1.domain.businessLogic.model.Customers
 import com.example.allin1.MainApplicationJava
 import com.example.allin1.R
 import com.example.allin1.presentation.viewmodel.CartViewModel
 import com.example.allin1.presentation.viewmodel.UserViewModel
 import com.example.allin1.utils.Constants
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_homepage.*
 
+@AndroidEntryPoint
 class HomePageActivity : AppCompatActivity() {
     private lateinit var cartViewModel: CartViewModel
     private lateinit var userViewModel: UserViewModel

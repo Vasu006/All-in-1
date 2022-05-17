@@ -2,12 +2,14 @@ package com.example.allin1.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.allin1.data.Cartitems
+import com.example.allin1.domain.businessLogic.model.Cartitems
 import com.example.allin1.domain.businessLogic.repository.CartRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class CartViewModel() : ViewModel() {
+@HiltViewModel
+class CartViewModel @Inject constructor(private val cartRepository : CartRepository) : ViewModel() {
 
-    private val cartRepository = CartRepository()
 
 
     fun insertCartItem(item: Cartitems) {

@@ -1,9 +1,10 @@
-package com.example.allin1.data
+package com.example.allin1.data.datasource
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import com.example.allin1.domain.businessLogic.model.Customers
 
 @Dao
 interface CustomersDao {

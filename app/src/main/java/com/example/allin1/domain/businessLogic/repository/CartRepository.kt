@@ -3,40 +3,24 @@ package com.example.allin1.domain.businessLogic.repository
 import androidx.lifecycle.LiveData
 import com.example.allin1.MainApplicationJava
 import com.example.allin1.data.*
+import com.example.allin1.data.datasource.CustomersDatabase
+import com.example.allin1.domain.businessLogic.model.Cartitems
 
-class CartRepository(){
+interface CartRepository{
 
-    private val database = CustomersDatabase.getDatabaseInstance(MainApplicationJava.getContext())
+    fun insertCartItem(item: Cartitems)
 
-    fun insertCartItem(item: Cartitems) {
-        database.CartitemsDao().addCartItem(item)
-    }
+    fun removeCartItem(item: Cartitems)
 
-    fun removeCartItem(item: Cartitems) {
-        database.CartitemsDao().deleteCartItem(item)
-    }
+    fun getCartItem(): LiveData<List<Cartitems>>
 
-    fun getCartItem(): LiveData<List<Cartitems>> {
-        return database.CartitemsDao().getCartItem()
-    }
+    fun getCartQuantity(): Int
 
-    fun getCartQuantity(): Int {
-        return database.CartitemsDao().getCartQuantity()
-    }
+    fun getCartValue(): Double
 
-    fun getCartValue(): Double {
-        return database.CartitemsDao().getCartValue()
-    }
+    fun clearCart()
 
-    fun clearCart() {
-        database.CartitemsDao().clearCart()
-    }
+    fun cartItemExist(Cart_Name: String): Boolean
 
-    fun cartItemExist(Cart_Name: String): Boolean {
-        return database.CartitemsDao().cartItemExist(Cart_Name)
-    }
-
-    fun getFinalCart(): List<Cartitems> {
-        return database.CartitemsDao().getFinalCart()
-    }
+    fun getFinalCart(): List<Cartitems>
 }

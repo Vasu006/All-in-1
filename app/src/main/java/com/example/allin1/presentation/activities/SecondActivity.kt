@@ -8,14 +8,16 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.allin1.*
-import com.example.allin1.data.Cartitems
+import com.example.allin1.domain.businessLogic.model.Cartitems
 import com.example.allin1.presentation.adapters.ItemRVAdapter
 import com.example.allin1.MainApplicationJava
 import com.example.allin1.presentation.viewmodel.CartViewModel
 import com.example.allin1.presentation.viewmodel.GroceriesViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_second.*
 import kotlinx.android.synthetic.main.items_recyclerview.view.*
 
+@AndroidEntryPoint
 class SecondActivity : AppCompatActivity() {
     private lateinit var cartViewModel: CartViewModel
 
@@ -47,7 +49,7 @@ class SecondActivity : AppCompatActivity() {
 
         cartViewModel = ViewModelProvider(this)[CartViewModel::class.java]
 
-        rv_adapter.setInterface(object : ItemRVAdapter.Listener{
+        rv_adapter.setInterface(object : ItemRVAdapter.Listener {
             override fun checkCartItem(item: Cartitems, view: View) {
                 if (cartViewModel.cartItemExist(item.Name))
                     view.btn_addToCart.text = "Remove Item"
@@ -66,7 +68,7 @@ class SecondActivity : AppCompatActivity() {
             }
         })
 
-        groceriesViewModel.getGroceriesList().observe(this){
+        groceriesViewModel.getGroceriesList().observe(this) {
             rv_adapter.setItems(it)
         }
 

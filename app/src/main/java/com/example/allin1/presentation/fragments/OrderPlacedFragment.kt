@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.allin1.R
 import com.example.allin1.presentation.viewmodel.CartViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OrderPlacedFragment : Fragment() {
 
     private lateinit var cartViewModel: CartViewModel

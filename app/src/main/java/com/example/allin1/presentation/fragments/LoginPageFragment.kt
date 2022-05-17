@@ -10,15 +10,16 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.allin1.*
 import com.example.allin1.presentation.activities.HomePageActivity
-import com.example.allin1.data.Customers
+import com.example.allin1.domain.businessLogic.model.Customers
 import com.example.allin1.MainApplicationJava
 import com.example.allin1.presentation.viewmodel.UserViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_loginpage.*
 
+@AndroidEntryPoint
 class LoginPageFragment : Fragment() {
 
     private lateinit var userViewModel: UserViewModel
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +34,7 @@ class LoginPageFragment : Fragment() {
 
         userViewModel = ViewModelProvider(this)[UserViewModel::class.java]
         btn_login.setOnClickListener {
-            if (loginValidation() == true) {
+            if (loginValidation()) {
                 val current_customer: Customers =
                     userViewModel.loginCustomer(login_emailId.text.toString())[0]
 
@@ -58,7 +59,7 @@ class LoginPageFragment : Fragment() {
         }
     }
 
-    fun loginValidation(): Boolean {
+    private fun loginValidation(): Boolean {
 
         if (!android.util.Patterns.EMAIL_ADDRESS.matcher(login_emailId.text.toString())
                 .matches()

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.allin1.R
-import com.example.allin1.data.Cartitems
+import com.example.allin1.domain.businessLogic.model.Cartitems
 import kotlinx.android.synthetic.main.checkout_itemsrecyclerview.view.*
 
 class CheckoutItemRVAdapter(
